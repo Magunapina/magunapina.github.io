@@ -3,6 +3,21 @@
   <head>
     <meta charset="utf-8" />
     <title>Magunapina</title>
+    <link rel="icon" href="favicon.ico" />
+    <style>
+      body {
+        font-family: sans-serif;
+      }
+      h1 {
+        font-size: 6rem;
+      }
+      h2, button, span {
+        font-size: 4rem;
+      }
+      h3 {
+        font-size: 2rem;
+      }
+    </style>
   </head>
   <body>
     <h1>Magunapina</h1>
@@ -15,7 +30,20 @@
     <a href="https://x.com/Magunapina">
       <h2>X</h2>
     </a>
-      <h2>Nostr public key:</h2>
-      <h3>npub16cpwwfhvpzdu6mfks5c7s8x8regdqdp83v34uz49ptpnpt85fj8s3k96ht</h3>
+    <h2>Nostr public key:</h2>
+    <h3>npub16cpwwfhvpzdu6mfks5c7s8x8regdqdp83v34uz49ptpnpt85fj8s3k96ht</h3>
+    <button type="button" onclick="copy()">Copy npub</button>
+    <span id="message" style="display: none;">Copied!</span>
+
+    <script>
+      function copy() {
+        navigator.clipboard.writeText("npub16cpwwfhvpzdu6mfks5c7s8x8regdqdp83v34uz49ptpnpt85fj8s3k96ht");
+        const message = document.getElementById("message");
+        message.style.display = "inline";
+        setTimeout (() => {
+          message.style.display = "none";
+        }, 1500);
+      }
+    </script>
   </body>
 </html>
